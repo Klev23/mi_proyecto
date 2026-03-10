@@ -1,0 +1,41 @@
+{% extends 'mi_aplicacion/base.html' %}
+{% load static %}
+<html>
+<title>{{ TITULO }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+<body>
+    {% block encabezado %}
+        <a href="{% url 'alta' %}"><img src="{% static 'images/mas.png' %}" alt="Más" width="30" height="30"></a>
+    {% endblock %}
+    {% block contenido %}
+    <div class="w3-container" style="display: flex; justify-content: space-between; align-items: center;">
+        
+        
+    </div>
+    
+
+    <table class="w3-table-all w3-hoverable">
+        <thead>
+            <tr class="w3-light-grey">
+                <th>Editar</th>
+                <th>Eliminar</th>
+                <th>Nombre</th>
+                <th>Siglas</th>
+            </tr>
+        </thead>
+        {% for escuela in ESCUELAS %}
+        <tr>
+            <td><a href="{% url 'editar' escuela.id %}"><img src="{% static 'images/editar.png' %}" alt="Editar" width="30" height="30"></a></td>
+            <td><a href="{% url 'eliminar' escuela.id %}"><img src="{% static 'images/menos.png' %}" alt="Eliminar" width="30" height="30"></a></td>
+            <td>{{ escuela.nombre }}</td>
+            <td>{{ escuela.siglas }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+
+</html>

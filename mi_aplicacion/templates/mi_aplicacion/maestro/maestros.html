@@ -1,0 +1,33 @@
+{% extends 'mi_aplicacion/base.html' %}
+{% load static %}
+
+{% block encabezado %}
+<a href="{% url 'maestro_alta' %}"><img src="{% static 'images/mas.png' %}" alt="Más" width="30" height="30"></a>
+{% endblock %}
+
+{% block contenido %}
+<table class="w3-table-all w3-hoverable">
+    <thead>
+        <tr class="w3-light-grey">
+            <th>Editar</th>
+            <th>Eliminar</th>
+            <th>Nombre</th>
+            <th>Escuela</th>
+            <th>Sexo</th>
+            <th>Fecha Nacimiento</th>
+        </tr>
+    </thead>
+    {% for maestro in MAESTROS %}
+    <tr>
+        <td><a href="{% url 'maestro_editar' maestro.id %}"><img src="{% static 'images/editar.png' %}" alt="Editar"
+                    width="30" height="30"></a></td>
+        <td><a href="{% url 'maestro_eliminar' maestro.id %}"><img src="{% static 'images/menos.png' %}" alt="Eliminar"
+                    width="30" height="30"></a></td>
+        <td>{{ maestro.nombre }}</td>
+        <td>{{ maestro.escuela.siglas }}</td>
+        <td>{{ maestro.get_sexo_display }}</td>
+        <td>{{ maestro.fecha_nacimiento }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
