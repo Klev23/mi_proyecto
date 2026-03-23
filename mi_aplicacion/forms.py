@@ -1,3 +1,4 @@
+from django import forms
 from django.forms import ModelForm
 from mi_aplicacion.models import Escuela, Maestro
 
@@ -10,3 +11,6 @@ class MaestroForm(ModelForm):
     class Meta:
         model = Maestro
         fields = ['nombre', 'escuela', 'sexo', 'fecha_nacimiento']
+        widgets = {
+            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+        }

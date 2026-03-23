@@ -30,6 +30,9 @@ class EscuelaAlta(View):
             "TITULO": "Escuela",
             "SUBTITULO": "Alta de Escuela",
             "form": form,
+            "BG_COLOR": "bg-success-subtle",
+            "TEXTO_BOTON": "Guardar",
+            "COLOR_BOTON": "btn-success",
         }
         return render(request, "mi_aplicacion/escuela/CRUD.html", cdx)
     
@@ -48,6 +51,9 @@ class EscuelaEditar(View):
             "TITULO": "Escuela",
             "SUBTITULO": "Editar Escuela",
             "form": form,
+            "BG_COLOR": "bg-warning-subtle",
+            "TEXTO_BOTON": "Actualizar",
+            "COLOR_BOTON": "btn-warning",
         }
         return render(request, "mi_aplicacion/escuela/CRUD.html", cdx)
     
@@ -67,6 +73,9 @@ class EscuelaEliminar(View):
             "TITULO": "Escuela",
             "SUBTITULO": "Eliminar Escuela",
             "escuela": escuela,
+            "BG_COLOR": "bg-danger-subtle",
+            "TEXTO_BOTON": "Confirmar",
+            "COLOR_BOTON": "btn-danger",
         }
         return render(request, "mi_aplicacion/escuela/CRUD.html", cdx)
     
@@ -92,6 +101,9 @@ class MaestroAlta(View):
             "TITULO": "Maestro",
             "SUBTITULO": "Alta de Maestro",
             "form": form,
+            "BG_COLOR": "bg-success-subtle",
+            "TEXTO_BOTON": "Guardar",
+            "COLOR_BOTON": "btn-success",
         }
         return render(request, "mi_aplicacion/escuela/CRUD.html", cdx)
     
@@ -110,6 +122,9 @@ class MaestroEditar(View):
             "TITULO": "Maestro",
             "SUBTITULO": "Editar Maestro",
             "form": form,
+            "BG_COLOR": "bg-warning-subtle",
+            "TEXTO_BOTON": "Actualizar",
+            "COLOR_BOTON": "btn-warning",
         }
         return render(request, "mi_aplicacion/escuela/CRUD.html", cdx)
     
@@ -128,6 +143,9 @@ class MaestroEliminar(View):
             "TITULO": "Maestro",
             "SUBTITULO": "Eliminar Maestro",
             "maestro": maestro,
+            "BG_COLOR": "bg-danger-subtle",
+            "TEXTO_BOTON": "Confirmar",
+            "COLOR_BOTON": "btn-danger",
         }
         return render(request, "mi_aplicacion/escuela/CRUD.html", cdx)
     
